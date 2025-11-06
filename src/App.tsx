@@ -1,14 +1,13 @@
-import BannerSuperior from "./components/BannerSuperior";
-import ImagemLogin from "./components/ImagemLogin";
-import Divisor from "./components/Divisor";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login/Login'
 
 function App() {
   return (
-    <div>
-      <BannerSuperior />
-      <ImagemLogin />
-      <Divisor />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

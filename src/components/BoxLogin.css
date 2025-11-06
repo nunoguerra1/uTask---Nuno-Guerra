@@ -1,0 +1,64 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.TelaLogin h1 {
+    text-align: center;
+    color: #226ED8;
+    margin-bottom: 3.2223415682062297vh;
+    font-size: 48px;
+}
+
+.forms {
+    margin-bottom: 20px;
+}
+
+.forms label {
+    display: block;
+    margin-bottom: 0.5370569280343717vh;
+    color: #00122A;
+}
+
+.forms input {
+    width: 55%;
+    padding: 15px;
+    border: 1px solid #002D6C;
+    background-color: #EEF5FF;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.esqueciSenha {
+    display: block;
+    margin-top: 8px;
+    color: #226ED8;
+    font-size: 14px;
+}
+
+.btnEntrar {
+    width: 55%;
+    padding: 16px;
+    background: #226ED8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnEntrar:hover {
+    background: #114FA7;
+}
+
+.DivisorLogin {
+    height: 100%;
+    width: 250px;
+}
+
+.CriarConta {
+    display: block;
+    color: #00122A;
+    font-size: 18px;
+}
