@@ -1,0 +1,44 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.TelaCadastro h1 {
+    text-align: center;
+    color: #226ED8;
+    font-size: 48px;
+}
+
+.TelaCadastro p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.forms label {
+    font-weight: 400;
+}
+
+.forms input {
+    width: 27%;
+    padding: 10px;
+}
+
+.btnCadastrar {
+    width: 27%;
+    padding: 12px;
+    background: #226ED8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnCadastrar:hover {
+    background: #114FA7;
+}
+
+.TelaCadastro img {
+    width: 200px;
+}

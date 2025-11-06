@@ -23,7 +23,7 @@ function BoxLogin() {
 
             <img className='DivisorLogin' src={DivisorLogin} alt="divisor" />
 
-            <a href="#" className='CriarConta'>Não tem cadastro ? Crie uma conta</a>
+            <a href="/Cadastro" className='CriarConta'>Não tem cadastro ? Crie uma conta</a>
         </div>
     )
 }
