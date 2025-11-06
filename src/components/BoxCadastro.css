@@ -13,17 +13,27 @@
     font-weight: 600;
 }
 
-.forms label {
+.formscad {
+    margin-bottom: 20px;
+}
+
+.formscad label {
+    display: block;
+    margin-bottom: 0.5370569280343717vh;
     font-weight: 400;
 }
 
-.forms input {
+.formscad input {
     width: 27%;
     padding: 10px;
+    border: 1px solid #002D6C;
+    background-color: #EEF5FF;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
 .btnCadastrar {
-    width: 27%;
+    width: 24%;
     padding: 12px;
     background: #226ED8;
     color: white;
