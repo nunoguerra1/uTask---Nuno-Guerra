@@ -1,0 +1,68 @@
+.toggle-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-btn {
+    width: 80px;
+    height: 35px;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+    background: var(--toggle-bg, #ffa726);
+}
+
+[data-theme="dark"] .toggle-btn {
+    background: var(--toggle-bg-dark, #424242);
+}
+
+.toggle-btn i {
+    font-size: 18px;
+    z-index: 2;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.toggle-btn .bxs-sun {
+    color: #ffeb3b;
+}
+
+.toggle-btn .bxs-moon {
+    color: #e3f2fd;
+}
+
+.slider {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    left: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn.dark .slider {
+    transform: translateX(45px);
+}
+
+.toggle-btn.dark .bxs-sun {
+    opacity: 0.5;
+}
+
+.toggle-btn.light .bxs-moon {
+    opacity: 0.5;
+}
+
+.toggle-container:hover .slider {
+    transform: scale(1.1);
+}
+
+.toggle-btn.dark:hover .slider {
+    transform: translateX(45px) scale(1.1);
+}

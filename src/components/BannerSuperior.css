@@ -1,4 +1,4 @@
 .banner-superior {
-    background: #226ED8;
+    background: var(--banner-color);
     padding: 4.81vh 300px;
 }

@@ -3,6 +3,7 @@ import BannerSuperior from '../../components/BannerSuperior'
 import BoxCadastro from '../../components/BoxCadastro'
 import Divisor from "../../components/Divisor";
 import ImagemCadastro from '../../components/ImagemCadastro'
+import Tema from '../../components/Tema'
 
 function Cadastro() {
     return (
@@ -11,6 +12,9 @@ function Cadastro() {
             <BoxCadastro />
             <Divisor />
             <ImagemCadastro />
+            <div className='tema-cadastro'>
+                <Tema />
+            </div>
         </div>
     )
 }

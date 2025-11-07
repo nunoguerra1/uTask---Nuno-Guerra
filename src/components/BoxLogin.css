@@ -16,7 +16,7 @@
 .forms label {
     display: block;
     margin-bottom: 0.5370569280343717vh;
-    color: #00122A;
+    color: var(--text-color);
 }
 
 .forms input {
@@ -59,6 +59,6 @@
 
 .CriarConta {
     display: block;
-    color: #00122A;
+    color: var(--text-color);
     font-size: 18px;
 }

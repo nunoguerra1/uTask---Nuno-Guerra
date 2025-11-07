@@ -22,12 +22,21 @@
     margin-top: 2.1482277121374866vh;
 }
 
-.Divisor {
-    margin-left: 5.324813631522897vw;
-    margin-top: 3.2223415682062297vh;
+.Divisor img {
+    margin-left: 850px;
+    margin-top: -650px;
 }
 
 .ImagemCadastro img {
     margin-left: 1030px;
-    margin-top: -1000px;
+    margin-top: -600px;
+    bottom: 70px;
+}
+
+.ImagemCadastro {
+    margin-top: -10px;
+}
+
+.tema-cadastro {
+    margin-top: -93.85091299677766vh;
 }

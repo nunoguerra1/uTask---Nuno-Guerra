@@ -11,6 +11,7 @@
 .TelaCadastro p {
     font-size: 20px;
     font-weight: 600;
+    color: var(--text-color);
 }
 
 .formscad {
@@ -21,6 +22,7 @@
     display: block;
     margin-bottom: 0.5370569280343717vh;
     font-weight: 400;
+    color: var(--text-color);
 }
 
 .formscad input {
