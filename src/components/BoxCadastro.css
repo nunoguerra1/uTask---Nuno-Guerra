@@ -32,6 +32,12 @@
     background-color: #EEF5FF;
     border-radius: 8px;
     font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.formscad input.input-error {
+    border: 2px solid #820000 !important;
+    background-color: #FFE6E6 !important;
 }
 
 .btnCadastrar {
@@ -53,4 +59,16 @@
 
 .TelaCadastro img {
     width: 200px;
+}
+
+.error-message {
+    color: #820000;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+.text-danger {
+    color: #ff4444;
+    margin-bottom: 15px;
 }
