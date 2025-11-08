@@ -28,6 +28,11 @@
     font-size: 16px;
 }
 
+.forms input.input-error {
+    border: 2px solid #820000 !important;
+    background-color: #FFE6E6 !important;
+}
+
 .esqueciSenha {
     display: block;
     margin-top: 8px;
@@ -61,4 +66,12 @@
     display: block;
     color: var(--text-color);
     font-size: 18px;
+}
+
+.error-message {
+    color: #820000;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 183px;
+    display: block;
 }

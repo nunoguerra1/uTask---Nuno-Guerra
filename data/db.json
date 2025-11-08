@@ -6,6 +6,20 @@
             "email": "teste@teste.com",
             "senha": "1234",
             "csenha": "1234"
+        },
+        {
+            "id": "dd64",
+            "usuario": "teste2",
+            "email": "outroteste@teste.com",
+            "senha": "1234",
+            "csenha": "1234"
+        },
+        {
+            "id": "11f3",
+            "usuario": "outroteste",
+            "email": "unino@unect.com",
+            "senha": "1234",
+            "csenha": "1234"
         }
     ]
 }
