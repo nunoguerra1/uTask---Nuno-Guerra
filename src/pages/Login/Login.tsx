@@ -2,7 +2,6 @@ import BannerSuperior from "../../components/BannerSuperior";
 import ImagemLogin from "../../components/ImagemLogin";
 import Divisor from "../../components/Divisor";
 import BoxLogin from "../../components/BoxLogin";
-import Tema from '../../components/Tema'
 import './Login.css'
 
 function Login() {
@@ -10,9 +9,10 @@ function Login() {
         <div>
             <BannerSuperior />
             <ImagemLogin />
-            <Divisor />
+            <div className="DivisorLogin">
+                <Divisor />
+            </div>
             <BoxLogin />
-            <Tema />
         </div>
     )
 }

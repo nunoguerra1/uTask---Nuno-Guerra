@@ -1,6 +1,10 @@
-.Divisor img {
-    margin-left: 88.07733619763695vh;
-    margin-top: -107.41138560687433vh;
+.DivisorLogin img {
+    margin-left: 140.07733619763695vh;
+    margin-top: -120.41138560687433vh;
+}
+
+.DivisorLogin {
+    margin-top: -2.6852846401718584vh;
 }
 
 .ImagemLogin img {
@@ -42,9 +46,4 @@
     margin-top: 10.741138560687434vh;
     margin-left: 17.175718849840255vw;
 
-}
-
-.toggle-container {
-    margin-left: 80.54739084132055vw;
-    margin-top: -81.85091299677766vh;
 }

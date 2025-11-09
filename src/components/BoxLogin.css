@@ -10,7 +10,7 @@
 }
 
 .forms {
-    margin-bottom: 20px;
+    margin-bottom: 2.1482277121374866vh;
 }
 
 .forms label {
@@ -24,7 +24,7 @@
     padding: 15px;
     border: 1px solid #002D6C;
     background-color: #EEF5FF;
-    border-radius: 8px;
+    border-radius: 0.8592910848549946vh;
     font-size: 16px;
 }
 
@@ -59,7 +59,7 @@
 
 .DivisorLogin {
     height: 100%;
-    width: 250px;
+    width: 13.312034078807242vw;
 }
 
 .CriarConta {
@@ -71,7 +71,7 @@
 .error-message {
     color: #820000;
     font-size: 14px;
-    margin-top: 5px;
-    margin-left: 183px;
+    margin-top: 0.5370569280343717vh;
+    margin-left: 10.744408945686901vw;
     display: block;
 }
