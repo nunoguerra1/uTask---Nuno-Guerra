@@ -1,0 +1,23 @@
+.footerUnect {
+    background: var(--footer-color);
+    padding: 2.81vh 300px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footerUnect p {
+    color: #FAFAFA;
+    font-size: 18px;
+}
+
+.FooterText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.FooterText svg {
+    position: relative;
+    top: 5px;
+}
