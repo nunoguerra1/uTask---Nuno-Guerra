@@ -89,13 +89,13 @@ function BoxLogin() {
                 <div className='forms'>
                     <label htmlFor="email">E-mail</label>
                     <input type="email" id="email" placeholder='Endereço de e-mail' value={formData.email} className={errors.email ? 'input-error' : ''} onChange={(event) => setFormData({ ...formData, email: event.target.value })} />
-                    {errors.email && <span className="error-message">{errors.email}</span>}
+                    {errors.email && <span className="error-messageLogin">{errors.email}</span>}
                 </div>
 
                 <div className='forms'>
                     <label htmlFor="senha">Senha</label>
                     <input type="password" id="senha" placeholder='Senha secreta' value={formData.senha} className={errors.senha ? 'input-error' : ''} onChange={(event) => setFormData({ ...formData, senha: event.target.value })} />
-                    {errors.senha && <span className="error-message">{errors.senha}</span>}
+                    {errors.senha && <span className="error-messageLogin">{errors.senha}</span>}
                     <a href="#" className='esqueciSenha'>Esqueceu a senha ?</a>
                 </div>
 
