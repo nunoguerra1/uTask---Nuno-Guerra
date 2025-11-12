@@ -11,13 +11,22 @@
   --background-color: #FFFFFF;
   --banner-color: #226ED8;
   --text-color: #00122A;
+  --footer-color: #114FA7;
+  --colunaKanban-color: #f0f0f0;
+  --cardTask-color: #FFFFFF;
+  --deleteButton-color: #FFFFFF;
 }
 
 [data-theme="dark"] {
   --background-color: #222222;
   --banner-color: #333333;
   --text-color: #FAFAFA;
+  --footer-color: #111111;
+  --colunaKanban-color: #333333;
+  --cardTask-color: #3D3D3D;
+  --deleteButton-color: #535353;
 }
+
 
 body {
   background-color: var(--background-color);
