@@ -75,3 +75,22 @@
     margin-left: 10.744408945686901vw;
     display: block;
 }
+
+.password-input-wrapper-login {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.toggle-password-visibility-login {
+    position: absolute;
+    right: 270px;
+    top: 53%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+}
