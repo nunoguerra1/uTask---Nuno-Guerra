@@ -20,19 +20,21 @@ export const TaskComponente: React.FC<TaskComponenteProps> = ({ task, moveTask, 
         setIsMenuOpen(false);
     };
 
+    const expandIcon = (
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill='currentColor'><path d="M24 24H0V0h24v24z" fill="none" opacity=".87" /><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" /></svg>
+    );
+
+    const hideIcon = (
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill='currentColor'><path d="M0 0h24v24H0V0z" fill="none" /><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z" /></svg>
+    )
+
     return (
         <div className="task-card" onMouseLeave={() => setIsMenuOpen(false)}>
             <div className="task-header-row">
                 <div className="task-title">{task.title}</div>
 
-                <span
-                    className="menu-icon"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        setIsMenuOpen(!isMenuOpen);
-                    }}
-                >
-                    ⋮
+                <span className="menu-icon" onClick={(e) => { e.stopPropagation(); setIsMenuOpen(!isMenuOpen); }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" /></svg>
                 </span>
 
                 {isMenuOpen && status === 'todo' && (
@@ -47,11 +49,9 @@ export const TaskComponente: React.FC<TaskComponenteProps> = ({ task, moveTask, 
             </div>
 
             <div className="description-action-row">
-                <button
-                    className="description-toggle"
-                    onClick={() => setShowDescription(!showDescription)}
-                >
+                <button className="description-toggle" onClick={() => setShowDescription(!showDescription)}>
                     {showDescription ? 'Esconder descrição' : 'Ler descrição'}
+                    {showDescription ? expandIcon : hideIcon}
                 </button>
             </div>
 

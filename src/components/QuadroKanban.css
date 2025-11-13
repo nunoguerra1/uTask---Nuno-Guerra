@@ -92,10 +92,14 @@
     right: 5px;
     z-index: 15;
     font-size: 1.2em;
-    color: #999;
+    color: var(--text-color);
     cursor: pointer;
     padding: 5px;
     margin: -5px;
+}
+
+.menu-icon:hover {
+    color: #226ED8;
 }
 
 .menu-option {
@@ -304,4 +308,15 @@
     background-color: #a0c4ff;
     cursor: not-allowed;
     box-shadow: none;
+}
+
+.description-toggle {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.icons svg {
+    color: var(--text-color);
+    border: 1px red solid;
 }
