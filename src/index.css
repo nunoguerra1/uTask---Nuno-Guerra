@@ -15,6 +15,9 @@
   --colunaKanban-color: #f0f0f0;
   --cardTask-color: #FFFFFF;
   --deleteButton-color: #FFFFFF;
+  --iconBackground1-color: #FFFCEE;
+  --iconBackground2-color: #FFF5C0;
+  --icon-color: #FFC107;
 }
 
 [data-theme="dark"] {
@@ -25,6 +28,9 @@
   --colunaKanban-color: #333333;
   --cardTask-color: #3D3D3D;
   --deleteButton-color: #535353;
+  --iconBackground1-color: #515151;
+  --iconBackground2-color: #3D3D3D;
+  --icon-color: #FFFFFF;
 }
 
 
