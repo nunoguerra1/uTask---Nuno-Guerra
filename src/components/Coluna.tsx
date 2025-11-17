@@ -1,6 +1,7 @@
 import React from 'react';
 import { Task, TaskStatus } from '../types/task';
 import { TaskComponente } from './TaskComponente';
+import { Droppable } from 'react-beautiful-dnd';
 
 interface ColunaProps {
     title: string;
@@ -8,24 +9,40 @@ interface ColunaProps {
     tasks: Task[];
     moveTask: (taskId: number, direction: 'next' | 'prev') => void;
     deleteTask: (taskId: number) => void;
+    columnId: string;
 }
 
-export const Coluna: React.FC<ColunaProps> = ({ status, tasks, moveTask, deleteTask }) => {
+export const Coluna: React.FC<ColunaProps> = ({ status, tasks, moveTask, deleteTask, columnId }) => {
     const columnTasks = tasks.filter(task => task.status === status);
 
     return (
         <div className="kanban-column">
 
-            <div className="task-list">
-                {columnTasks.map(task => (
-                    <TaskComponente
-                        key={task.id}
-                        task={task}
-                        moveTask={moveTask}
-                        deleteTask={deleteTask}
-                    />
-                ))}
-            </div>
+            <Droppable droppableId={columnId}>
+                {(provided, snapshot) => (
+                    <div
+                        className="task-list"
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        style={{
+                            backgroundColor: snapshot.isDraggingOver ? 'rgba(0, 0, 0, 0.05)' : 'transparent',
+                            minHeight: '100px',
+                            padding: '8px 0',
+                        }}
+                    >
+                        {columnTasks.map((task, index) => (
+                            <TaskComponente
+                                key={task.id}
+                                task={task}
+                                moveTask={moveTask}
+                                deleteTask={deleteTask}
+                                index={index}
+                            />
+                        ))}
+                        {provided.placeholder}
+                    </div>
+                )}
+            </Droppable>
         </div>
     );
 };
