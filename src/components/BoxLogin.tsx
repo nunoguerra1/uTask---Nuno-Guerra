@@ -70,7 +70,7 @@ function BoxLogin() {
                     if (!userFound) {
                         setErrors({ email: "Email não encontrado" });
                     } else if (!passwordCorrect) {
-                        setErrors({ senha: "Senha incorreta" });
+                        setErrors({ senha: "Senha incorreta, tente novamente" });
                     }
                 })
                 .catch(err => {

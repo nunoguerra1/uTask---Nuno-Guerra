@@ -51,6 +51,7 @@
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
+    position: relative;
 }
 
 .btnEntrar:hover {
@@ -60,12 +61,14 @@
 .DivisorLogin {
     height: 100%;
     width: 13.312034078807242vw;
+    position: relative;
 }
 
 .CriarConta {
     display: block;
     color: var(--text-color);
     font-size: 18px;
+    position: relative;
 }
 
 .error-messageLogin {
@@ -93,4 +96,51 @@
     cursor: pointer;
     line-height: 1;
     z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+    .TelaLogin h1 {
+        margin-top: 85.92910848549947vh;
+        margin-left: -40.649627263045794vw;
+        font-size: 58px;
+    }
+
+    .forms {
+        margin-left: -50.247071352502662vw;
+    }
+
+    .forms label {
+        font-size: 18px;
+    }
+
+    .forms input {
+        width: 85%;
+        padding: 10px;
+    }
+
+    .esqueciSenha {
+        margin-top: 10px;
+    }
+
+    .toggle-password-visibility-login {
+        margin-right: -220px;
+    }
+
+    .btnEntrar {
+        top: 2.1482277121374866vh;
+        left: -51.980830670926517vw;
+        width: 170%;
+    }
+
+    .DivisorLogin {
+        width: 45.649627263045794vw;
+        bottom: 3.7593984962406015vh;
+        left: 0.5324813631522897vw;
+    }
+
+    .CriarConta {
+        margin-right: -45.649627263045794vw;
+        right: 50.714589989350372vw;
+    }
+
 }

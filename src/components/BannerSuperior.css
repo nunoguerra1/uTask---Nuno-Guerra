@@ -6,3 +6,10 @@
 .tema {
     margin-left: 63.89776357827476vw;
 }
+
+@media screen and (max-width: 768px) {
+    .banner-superior {
+        padding: 30px 20px;
+    }
+
+}
