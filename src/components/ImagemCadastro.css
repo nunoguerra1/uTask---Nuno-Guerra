@@ -2,3 +2,9 @@
     width: 34.185303514377vw;
     height: 74.43609022556392vh;
 }
+
+@media screen and (max-width: 768px) {
+    .ImagemCadastro img {
+        display: none;
+    }
+}

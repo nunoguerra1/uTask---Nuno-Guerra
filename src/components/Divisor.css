@@ -2,3 +2,9 @@
     height: 80.55853920515575vh;
     width: 0.26624068157614483vw;
 }
+
+@media screen and (max-width: 768px) {
+    .Divisor img {
+        display: none;
+    }
+}
