@@ -10,13 +10,21 @@ interface ColunaProps {
     moveTask: (taskId: number, direction: 'next' | 'prev') => void;
     deleteTask: (taskId: number) => void;
     columnId: string;
+    isMobile?: boolean;
 }
 
-export const Coluna: React.FC<ColunaProps> = ({ status, tasks, moveTask, deleteTask, columnId }) => {
+export const Coluna: React.FC<ColunaProps> = ({
+    status,
+    tasks,
+    moveTask,
+    deleteTask,
+    columnId,
+    isMobile = false
+}) => {
     const columnTasks = tasks.filter(task => task.status === status);
 
     return (
-        <div className="kanban-column">
+        <div className={`kanban-column ${isMobile ? 'mobile' : ''}`}>
 
             <Droppable droppableId={columnId}>
                 {(provided, snapshot) => (
@@ -37,6 +45,7 @@ export const Coluna: React.FC<ColunaProps> = ({ status, tasks, moveTask, deleteT
                                 moveTask={moveTask}
                                 deleteTask={deleteTask}
                                 index={index}
+                                isMobile={isMobile}
                             />
                         ))}
                         {provided.placeholder}

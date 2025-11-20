@@ -20,6 +20,7 @@
   --iconBackground1-color: #FFFCEE;
   --iconBackground2-color: #FFF5C0;
   --icon-color: #FFC107;
+  --frase-button: #FFD569;
 }
 
 [data-theme="dark"] {
@@ -33,6 +34,7 @@
   --iconBackground1-color: #515151;
   --iconBackground2-color: #3D3D3D;
   --icon-color: #FFFFFF;
+  --frase-button: #3D3D3D;
 }
 
 

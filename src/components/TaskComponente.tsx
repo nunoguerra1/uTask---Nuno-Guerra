@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Task } from '../types/task';
 import { Draggable, DraggableProvided, DraggableStateSnapshot } from 'react-beautiful-dnd';
 
@@ -7,11 +7,32 @@ interface TaskComponenteProps {
     moveTask: (taskId: number, direction: 'next' | 'prev') => void;
     deleteTask: (taskId: number) => void;
     index: number;
+    isMobile?: boolean;
 }
 
-export const TaskComponente: React.FC<TaskComponenteProps> = ({ task, moveTask, deleteTask, index }) => {
+export const TaskComponente: React.FC<TaskComponenteProps> = ({
+    task,
+    moveTask,
+    deleteTask,
+    index,
+    isMobile = false
+}) => {
     const [showDescription, setShowDescription] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const status = task.status;
     const showNextButton = status !== 'done';
@@ -34,15 +55,10 @@ export const TaskComponente: React.FC<TaskComponenteProps> = ({ task, moveTask, 
         <Draggable draggableId={`task-${task.id}`} index={index}>
             {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
                 <div
-                    className="task-card"
-                    onMouseLeave={() => setIsMenuOpen(false)}
-
+                    className={`task-card ${isMobile ? 'mobile' : ''}`}
                     ref={provided.innerRef}
-
                     {...provided.draggableProps}
-
                     {...provided.dragHandleProps}
-
                     style={{
                         ...provided.draggableProps.style,
                         backgroundColor: snapshot.isDragging ? 'var(--cardTask-color)' : 'var(--cardTask-color)',
@@ -50,18 +66,29 @@ export const TaskComponente: React.FC<TaskComponenteProps> = ({ task, moveTask, 
                         userSelect: 'none',
                     }}
                 >
-                    <div className="task-header-row">
-
+                    <div className="task-header-row" ref={menuRef}>
                         <div className="task-title">
                             {task.title}
                         </div>
 
-                        <span className="menu-icon" onClick={(e) => { e.stopPropagation(); setIsMenuOpen(!isMenuOpen); }}>
+                        <span
+                            className="menu-icon"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIsMenuOpen(!isMenuOpen);
+                            }}
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" /></svg>
                         </span>
 
                         {isMenuOpen && status === 'todo' && (
-                            <button className="floating-delete-button" onClick={(e) => { e.stopPropagation(); handleDelete(task.id) }}>
+                            <button
+                                className="floating-delete-button"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleDelete(task.id);
+                                }}
+                            >
                                 Excluir
                             </button>
                         )}

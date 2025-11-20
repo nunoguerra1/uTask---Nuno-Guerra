@@ -9,3 +9,11 @@
     margin-top: -6.229860365198711vh;
     margin-left: 43.663471778487754vw;
 }
+
+@media screen and (max-width: 768px) {
+    .dashboard h1 {
+        font-size: 30px;
+        margin-left: 120px;
+        margin-top: -48px;
+    }
+}

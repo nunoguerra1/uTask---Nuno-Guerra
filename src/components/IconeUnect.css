@@ -6,3 +6,12 @@
     width: 1.7571884984025559vw;
     height: 5.370569280343717vh;
 }
+
+@media screen and (max-width: 768px) {
+    .UnectIcone img {
+        width: 6.703940362087327vw;
+        height: 4.940923737916219vh;
+        margin-left: -25px;
+        margin-top: 15px;
+    }
+}

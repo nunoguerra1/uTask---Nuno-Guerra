@@ -21,3 +21,19 @@
     position: relative;
     top: 5px;
 }
+
+@media screen and (max-width: 768px) {
+    .footerUnect {
+        padding: 20px 20px;
+    }
+
+    .footerUnect p {
+        font-size: 16px;
+    }
+
+    .FooterText {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}
