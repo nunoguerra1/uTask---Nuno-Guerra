@@ -162,20 +162,90 @@ export const QuadroKanban: React.FC = () => {
                         <div className="mobile-coluna-container">
                             {colunaMobileAtual === 0 && (
                                 <div className="kanban-column mobile">
-                                    {tasks.filter(task => task.status === 'todo').map((task) => (
-                                        <div key={task.id} className="task-card mobile">
-                                            <div className="task-header-row">
-                                                <div className="task-title">{task.title}</div>
-                                                <span className="menu-icon">⋯</span>
+                                    {tasks.filter(task => task.status === 'todo').map((task) => {
+                                        const toggleDescription = (e: React.MouseEvent) => {
+                                            e.stopPropagation();
+                                            const description = document.getElementById(`desc-${task.id}`);
+                                            const button = e.currentTarget;
+                                            const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill='currentColor'><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z"/></svg>`;
+
+                                            if (description && button) {
+                                                if (description.style.display === 'block') {
+                                                    description.style.display = 'none';
+                                                    button.innerHTML = `Ler descrição ${iconSvg}`;
+                                                } else {
+                                                    description.style.display = 'block';
+                                                    button.innerHTML = `Esconder descrição ${iconSvg}`;
+                                                }
+                                            }
+                                        };
+
+                                        const toggleMenu = (e: React.MouseEvent) => {
+                                            e.stopPropagation();
+                                            const menuButton = e.currentTarget;
+                                            const deleteButton = menuButton.nextElementSibling as HTMLElement;
+                                            if (deleteButton) {
+                                                deleteButton.style.display = deleteButton.style.display === 'block' ? 'none' : 'block';
+                                            }
+                                        };
+
+                                        return (
+                                            <div key={task.id} className="task-card mobile">
+                                                <div className="task-header-row">
+                                                    <div className="task-title">{task.title}</div>
+                                                    <span
+                                                        className="menu-icon"
+                                                        onClick={toggleMenu}
+                                                    >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
+                                                            <path d="M0 0h24v24H0V0z" fill="none" />
+                                                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                                                        </svg>
+                                                    </span>
+
+                                                    <button
+                                                        className="floating-delete-button"
+                                                        style={{ display: 'none' }}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            deleteTask(task.id);
+                                                            const button = e.currentTarget as HTMLElement;
+                                                            button.style.display = 'none';
+                                                        }}
+                                                    >
+                                                        Excluir
+                                                    </button>
+                                                </div>
+
+                                                <div className="description-action-row">
+                                                    <button
+                                                        className="description-toggle"
+                                                        onClick={toggleDescription}
+                                                        dangerouslySetInnerHTML={{
+                                                            __html: 'Ler descrição <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z"/></svg>'
+                                                        }}
+                                                    />
+                                                </div>
+
+                                                <p
+                                                    id={`desc-${task.id}`}
+                                                    className="task-description"
+                                                    style={{ display: 'none' }}
+                                                >
+                                                    {task.description || 'Sem descrição.'}
+                                                </p>
+
+                                                <div className="card-actions">
+                                                    <button
+                                                        className="action-icon next-icon"
+                                                        onClick={(e) => { e.stopPropagation(); moveTask(task.id, 'next') }}
+                                                    >
+                                                        {'>'}
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <button className="description-toggle">Ler descrição</button>
-                                            <div className="card-actions">
-                                                <button className="action-icon next-icon" onClick={() => moveTask(task.id, 'next')}>
-                                                    {'>'}
-                                                </button>
-                                            </div>
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
                                 </div>
                             )}
                             {colunaMobileAtual === 1 && (

@@ -127,6 +127,11 @@
     margin-bottom: 5px;
 }
 
+.description-action-row svg {
+    position: relative;
+    top: 8px;
+}
+
 .description-toggle {
     color: var(--text-color);
     background: none;
